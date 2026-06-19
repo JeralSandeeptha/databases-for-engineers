@@ -29,3 +29,9 @@ Think of it as asking a highly specific question or giving a precise command tha
 ### Data Manipulation Language (DML)
 
 - Modifying or handling data within a database
+
+---
+
+## SQL Notes
+
+[READ MORE](https://github.com/JeralSandeeptha/MySQL-Notes)
