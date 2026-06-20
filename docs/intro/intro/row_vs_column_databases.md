@@ -29,19 +29,19 @@ This is the table that we are creating by ourselves
 
 ![Image](../../../images/row-col-db-2.png)
 
-Row Oriented DB stores these as below. Stores like rows inside of each blobs
+Row Oriented DB stores these as below. Stores like rows inside of each blocks / pages
 
 ![Image](../../../images/row-col-db-3.png)
 
 Let's see how it performs when some queries meet
 
-1. When search with db id is extremely fast and know what is the blob we are looking for. After that we have all the fields that it has they are stored as rows
+1. When search with db id is extremely fast and know what is the page we are looking for. After that we have all the fields that it has they are stored as rows
 ![Image](../../../images/row-col-db-6.png)
 
-2. When search with a field name should go thorugh every blobs to find but once we find we have all the data for that
+2. When search with a field name should go thorugh every pages to find but once we find we have all the data for that
 ![Image](../../../images/row-col-db-5.png)
 
-3. When we use aggregations also we have to go though all the blobs one by one to find all the data. Extremely cost
+3. When we use aggregations also we have to go though all the pages one by one to find all the data. Extremely cost
 ![Image](../../../images/row-col-db-7.png)
 
 ---
@@ -62,16 +62,16 @@ This is the table that we are creating by ourselves
 
 ![Image](../../../images/row-col-db-2.png)
 
-Row Oriented DB stores these as below. Stores like row columns inside of each blobs
+Row Oriented DB stores these as below. Stores like row columns inside of each pages / blocks
 
 ![Image](../../../images/row-col-db-4.png)
 
 Let's see how it performs when some queries meet
 
-1. When search with db id is not fast like row databases because once it found it it needs to find other columns in other blobs
+1. When search with db id is not fast like row databases because once it found it it needs to find other columns in other blocks
 ![Image](../../../images/row-col-db-8.png)
 
-2. When search with a field name should go thorugh every blobs to find
+2. When search with a field name should go thorugh every blocks to find
 ![Image](../../../images/row-col-db-9.png)
 
 3. When we use aggregations extremely fast because all the data relted to salary column are stored as a single one. Extremely fast
