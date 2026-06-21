@@ -29,6 +29,8 @@
 
 ## Some DB Engines
 
+![Image](../../images/db-engines.png)
+
 - MyISAM
 - InnoDB
 - XtraDB
@@ -38,4 +40,4 @@
 - LevelDB
 - RocksDB
 
-![Image](../../images/db-engines.png)
+[READ MORE](https://medium.com/@akashsdas_dev/database-engines-675301475be7)
