@@ -30,6 +30,8 @@
 
 - Instead of reading and writing to a disk one byte or one row at a time, the database engine processes data in these specific chunks (usually 4KB to 16KB depending on the system)
 
+- DBMS creates a map between pages and blocks
+
 Database Engine    | Default Page Size | Configurable Range
 -------------------|-------------------|------------------------------------------
 PostgreSQL         | 8 KB              | Requires re-compilation / re-initialization
