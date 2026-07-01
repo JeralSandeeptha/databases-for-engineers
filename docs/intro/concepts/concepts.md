@@ -49,14 +49,47 @@ SQLite             | 4 KB              | 512 Bytes to 64 KB
 
 - IO operation (input/output) is a `read request to the disk`
 - We try to minimize this as much as possible
-- An IO can fetch 1 page or more depending on the disk partitions and other factors 
-- An IO cannot read a single row, its a page with many rows in them, you get them for free. 
-- You want to minimize the number of IOs as they are expensive. 
+- An IO can fetch 1 page or more depending on the disk partitions and other factors
+- An IO cannot read a single row, its a page with many rows in them, you get them for free.
+- You want to minimize the number of IOs as they are expensive.
 - Some IOs in operating systems goes to the operating system cache and not disk
 
-```
+```bash
 Reducing I/O (Input/Output) operations is one of the most effective ways to boost query performance
 ```
+
+---
+
+## Storage Architecture Internals
+
+![Image](../../../images/hdd.png)
+
+**How Data Reads and Processes (Using Diagram)**
+
+```
+[ Application Query ]
+         │
+         ▼
+ 1. CHOOSE TARGET       ───► The database determines the record resides at block [20, 21].
+         │
+         ▼
+ 2. SEEK TRACK          ───► The mechanical arm shifts inward/outward onto the target Track ring.
+         │
+         ▼
+ 3. READ MULTI-SECTOR   ───► As the platter spins, the magnetic head pulls the Data Block 
+         │                   (sectors 20 and 21 together) off the disk surface.
+         ▼
+ 4. LOAD TO RAM         ───► The raw block bytes copy into the database Buffer Pool inside RAM.
+         │
+         ▼
+ 5. CPU PROCESS         ───► The Database Engine reads the exact row variables from RAM 
+         │                   into CPU Registers to execute your code modifications.
+         ▼
+ 6. STORE / FLUSH       ───► After updating memory, a background thread flushes the modified 
+                             data block back down to overwrite sectors 20 and 21 on the disk.
+```
+
+<br/>
 
 ---
 
