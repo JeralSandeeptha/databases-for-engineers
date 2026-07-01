@@ -5,9 +5,9 @@
 <br/>
 
 - Database system that handles:
-    - Disk storage
-    - Data retrieval (queries)
-    - CRUD operations (Create, Read, Update, Delete)
+  - Disk storage
+  - Data retrieval (queries)
+  - CRUD operations (Create, Read, Update, Delete)
 
 <br/>
 
@@ -24,6 +24,12 @@
 <br/>
 
 - Some DBMS can change the db engine (`mysql`, `mariadb`) some can't (`psotgres`)
+
+<br/>
+
+## Database Engines Architectures
+
+- [RDBMS Engine Architecture](./architecture.md)
 
 ---
 
